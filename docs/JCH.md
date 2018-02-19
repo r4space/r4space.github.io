@@ -31,26 +31,36 @@ Note: Tx on pixhawk goes to Rx on Pi
 
 ### Step3: Power up and connect to the Pi
 i] Insert microSDCard into Pi3 (noting the number on it/the box)
+
 ii] Connect UBEC to JST connector underneath Iris and the microUSB end to the Pi3
+
 iii] Connect the Iris battery to power up the Pi
+
 iv] Connect your computer to the local WLAN:
     * SSID: NDSUAS
     * PSWD: NotreDame
+
 v] ssh pi@Pi<number>.local
     * PSWD: NotreDame
+
 vi] Shutdown the Pi 
     $ sudo shutdown -h now
 
 
 ### Step4: Configure the Pixhawk Serial Port
 i] Install [QGroundcontrol](http://qgroundcontrol.com/downloads/) on a local machine
+
 ii] Connect a USB cable between the microusb port on the side of the Iris to a local machine
+
 iii] QGC should connect to the Iris automatically
+
 iv] Click on the gears symbol and go to the bottom where the parameters option is
 ![QGC screenshot](https://r4space.github.io/docs/images/qgc.png)
+
 v] Under parameters, search for:
   - "SERIAL4_PROTOCOL" and set it to Mavlink2
   - "SERIAL4_BAUD" and set it to 57600
+
 vi] Unplug the Iris
 
 ### Step5: Connect Pi to Pixhawk
