@@ -39,12 +39,17 @@ iv] Connect your computer to the local WLAN:
     * SSID: NDSUAS
     * PSWD: NotreDame
 
-v] ssh pi@Pi<number>.local
+v] ssh in
+```
+ssh pi@Pi<number>.local
+```
+    * User: Pi
     * PSWD: NotreDame
 
 vi] Shutdown the Pi 
+```
     $ sudo shutdown -h now
-
+```
 
 ### Step4: Configure the Pixhawk Serial Port
 i] Install [QGroundcontrol](http://qgroundcontrol.com/downloads/) on a local machine
@@ -81,6 +86,7 @@ v] Once successfully connected you should see:
     >> MAV  //Tab to see command options
 ```
 
+
 vi] Connect to QGC again via the external USB cable and monitor settings as you change them via the ssh and the Pi.  
     
     - Eg: Change flight modes:
@@ -88,12 +94,18 @@ vi] Connect to QGC again via the external USB cable and monitor settings as you 
         >> MAV mode auto    //will change to auto flight mode if not already in it          (See documentation [here](http://ardupilot.org/plane/docs/flight-modes.html) on available flightmodes)
 ```
 
+- Play around with options.  See docs [here](http://ardupilot.github.io/MAVProxy/html/index.html)
 
-v] Close Mavproxy and now try interacting via a python script.  Start with the test connection script available in ~/Desktop/
+v] Close Mavproxy and now try interacting with the Pixhawk via a python script.  Start with the test connection script available in ~/Desktop/  
+
+Close the mavproxy session 1st.
+```
     $ python -i testconnection.py
+```
+Once connected close the session, you will come back to scripting just now.
 
 ### Step6: Flight logs:
-The pixhawk creats 2 types of log files, dataflash and telemetry logs (.tlogs).  both are in a binary format requiring an injestor to interperest them.
+The pixhawk creats 2 types of log files, dataflash (.bin) and telemetry logs (.tlogs).  Both are in a binary format requiring an injestor to interperest them.
 (see the [docs](http://ardupilot.org/copter/docs/common-downloading-and-analyzing-data-logs-in-mission-planner.html) for more details)
 
 When you ran mavproxy.py a t.log file was created, you can either examin this on the Pi (by exporting X) or by copying it to your local machine and doing 1 of a number of things:
