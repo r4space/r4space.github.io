@@ -5,8 +5,7 @@
 2. Attach dupont connectors to serial cable
 3. Test powering up and loging in to the Pi
 4. Configure the Pixhawk Serial Port
-5. Configure Pixhawk
-3. Attach the Pixhawk to the Pi
+5. Connect Pi to Pixhawk
 
 
 ### Step1: Add 5V usb supply
@@ -64,19 +63,33 @@ v] Under parameters, search for:
 vi] Unplug the Iris
 
 ### Step5: Connect Pi to Pixhawk
-- i] Unscrew the top of the Iris
-- ii] Insert DF13 connect (serial cable) into "Serial 4/5" port
-- iii] Connect Dupont connect to Pi3 Serial port header
-- iv] ssh into pi and run 
-    $ mavproxy.py --master=/dev/ttyS0 --baudrate 57600 --aircraft MyCopter
-    If it fails to connect go back and check all connections and the setting changes you made
-- v] Once successfully connected you should see:
-    >> MAV  //Tab to see command options
-- vi] Connect to QGC again via the external USB cable and monitor settings as you change them via the ssh and the Pi.  
-    -- Eg: Change flight modes:
-        >> MAV mode auto    //will change to auto flight mode if not already in it          (See documentation [here](http://ardupilot.org/plane/docs/flight-modes.html) on available flightmodes)
+i] Unscrew the top of the Iris
 
-- v] Close Mavproxy and now try interacting via a python script.  Start with the test connection script available in ~/Desktop/
+ii] Insert DF13 connect (serial cable) into "Serial 4/5" port
+
+iii] Connect Dupont connect to Pi3 Serial port header
+
+iv] ssh into pi and run:
+```
+    $ mavproxy.py --master=/dev/ttyS0 --baudrate 57600 --aircraft MyCopter
+```   
+
+If it fails to connect go back and check all connections and the setting changes you made
+
+v] Once successfully connected you should see:
+```
+    >> MAV  //Tab to see command options
+```
+
+vi] Connect to QGC again via the external USB cable and monitor settings as you change them via the ssh and the Pi.  
+    
+    - Eg: Change flight modes:
+```
+        >> MAV mode auto    //will change to auto flight mode if not already in it          (See documentation [here](http://ardupilot.org/plane/docs/flight-modes.html) on available flightmodes)
+```
+
+
+v] Close Mavproxy and now try interacting via a python script.  Start with the test connection script available in ~/Desktop/
     $ python -i testconnection.py
 
 ### Step6: Flight logs:
