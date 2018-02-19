@@ -89,37 +89,59 @@ v] Once successfully connected you should see:
 
 vi] Connect to QGC again via the external USB cable and monitor settings as you change them via the ssh and the Pi.  
     
-    - Eg: Change flight modes:
-```
-        >> MAV mode auto    //will change to auto flight mode if not already in it          (See documentation [here](http://ardupilot.org/plane/docs/flight-modes.html) on available flightmodes)
-```
+Eg: Change flight modes as follows.  This will change to auto flight mode if not already in it (See documentation [here](http://ardupilot.org/plane/docs/flight-modes.html) on available flightmodes.  Not all flightmodes are available on all platforms.)
 
-- Play around with options.  See docs [here](http://ardupilot.github.io/MAVProxy/html/index.html)
+```
+        >> MAV mode auto    
+```
+        
+
+Play around with options.  See Mavproxy docs [here](http://ardupilot.github.io/MAVProxy/html/index.html)
 
 v] Close Mavproxy and now try interacting with the Pixhawk via a python script.  Start with the test connection script available in ~/Desktop/  
 
 Close the mavproxy session 1st.
+
 ```
     $ python -i testconnection.py
 ```
+
 Once connected close the session, you will come back to scripting just now.
 
+
 ### Step6: Flight logs:
-The pixhawk creats 2 types of log files, dataflash (.bin) and telemetry logs (.tlogs).  Both are in a binary format requiring an injestor to interperest them.
+The pixhawk creats 2 types of log files, dataflash (.bin) and telemetry logs (.tlogs).  Both are in a binary format requiring an ingestor to interperate them.
 (see the [docs](http://ardupilot.org/copter/docs/common-downloading-and-analyzing-data-logs-in-mission-planner.html) for more details)
 
-When you ran mavproxy.py a t.log file was created, you can either examin this on the Pi (by exporting X) or by copying it to your local machine and doing 1 of a number of things:
-     Check for the log at: MyCopter/logs/<DATE>/flight1/flight<number>.tlog
+When you ran mavproxy.py a t.log file was created
 
-If you have a windows machine, MissionPlanner has good tools for view and exporting the logs to ASCII formats.  However, if you do not run Windows, or wish to create plots for reports/later reference etc MAVExplorer is very useful.  
+Check for the log at: MyCopter/logs/<DATE>/flight1/flight<number>.tlog
 
-If you wish to install MAVExplorer on your own local machine, follow the instructions [here](http://ardupilot.org/dev/docs/using-mavexplorer-for-log-analysis.html)
+You can either examine this log file in a number of ways:
 
-Finally if you do not wish to install MAVExplorer, it is already installed on the Pi, you will just need to forward X over shh as it's a GUI application
+
+#### Mission Planner on Windows
+[MissionPlanner](http://ardupilot.org/planner/docs/common-install-mission-planner.html) is another ground control software tool that has good tools for review and exporting the logs to ASCII formats.  Instructions for exploring a log file can be found [here](http://ardupilot.org/copter/docs/common-downloading-and-analyzing-data-logs-in-mission-planner.html).  You can either download the flight log from the Iris manually or if you plug the usb cable directly back into the Iris you can download it via Mission planner.  (A 3rd option is to connect to the Iris using the telemetry radio but generally log files are too large for this to be efficient). 
+
+#### Alternative to Mission Planner and better for report writing: MAVExplorer.py
+If you do not wish to run Mission Planner in Windows, or wish to create plots for reports/later reference etc MAVExplorer is very useful.  
+
+If you wish to install MAVExplorer on your own local machine, follow the instructions [here](http://ardupilot.org/dev/docs/using-mavexplorer-for-log-analysis.html).  Or, MAVExplorer, it is already installed on the Pi, you will just need to forward X over shh as it's a GUI application.
 
 Whichever avenue you take, once installed:
-$ MAVExplorer.py <*.tlog>
+```
+$ MAVExplorer.py <*.tlog/*.bin>
+```
 
+Tab to see available commands eg:
+
+```
+MAV> map
+```
+
+```
+MAV> graph MODE.Mode ATT.DesPitch POS.Alt
+```
 
 ### 7. Exercise
 - Write a python script that first checks and then changes one of the [failsafe](http://ardupilot.org/copter/docs/failsafe-landing-page.html) settings on the Pixhawk.
