@@ -13,9 +13,7 @@ Use the crimp tool to attach the JST connector to open UBEC input leads making s
 (red to red and black to black)
 
 ![Image of JST Connector](https://r4space.github.io/docs/images/JST.jpeg)
-
-
-![Image of UBEC](https://r4space.github.io/docs/images/UBEC.jpeg)
+![Image of UBEC](https://r4space.github.io/docs/images/UBEC.jpg)
 
 
 ### Step2: Add Dupont connector to serial cable
@@ -24,18 +22,23 @@ Again strip and crimp the connector to the open end of the cable taking care to 
 ![Image of Pi3 Pinout](https://r4space.github.io/docs/images/rp3_pinout.png)
 ![Pixhawk Serial Pinout](https://r4space.github.io/docs/images/PHSerial.png)
 
+#### Reference:
+- Grey/White/Black/Brown cable: Vcc/Tx/Rx/GND on Pixhawk
+- Red/Orange/Yellow/Green cable:  Vcc/Tx/Rx/GND on Pixhawk
+Note: Tx on pixhawk goes to Rx on Pi
 
 ### Step3: Power up and connect to the Pi
-- i] Insert microSDCard into Pi3 (noting the number on it)
-- ii] Connect UBEC to JST connect underneath Iris and the USB to the Pi3
-- iii] Connect the Iris battery to power up the Pi
-- iv] Connect your computer to the local WLAN:
-    -- SSID: NDSUAS
-    -- PSWD: NotreDame
-- v] ssh pi@Pi<number>.local
-    --PSWD: NotreDame
-- vi} Shutdown the Pi 
+i] Insert microSDCard into Pi3 (noting the number on it)
+ii] Connect UBEC to JST connect underneath Iris and the USB to the Pi3
+iii] Connect the Iris battery to power up the Pi
+iv] Connect your computer to the local WLAN:
+    * SSID: NDSUAS
+    * PSWD: NotreDame
+v] ssh pi@Pi<number>.local
+    * PSWD: NotreDame
+vi} Shutdown the Pi 
     $ sudo shutdown -h now
+
 
 ### Step4: Configure the Pixhawk Serial Port
 - i] Install [QGroundcontrol](http://qgroundcontrol.com/downloads/) on a local machine
