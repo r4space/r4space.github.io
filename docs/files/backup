@@ -1,7 +1,0 @@
-sudo dd status=progress if=/dev/sda of=./SDCardBackup.img
-
-sudo dd status=progress bs=16M if=./SDCardBackup.img of=/dev/sda
-sudo dd status=progress bs=64M if=./SDCardBackup.img of=/dev/sda
-
-
-

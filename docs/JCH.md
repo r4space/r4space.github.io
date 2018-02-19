@@ -2,18 +2,18 @@
 ## Controling a Pixhwak with a Pi3
 ### Steps:
 1. Add 5V usb supply 
-2. Attach Dupont connectors to serial cable
-3. Tes powering up and loging in to the Pi
+2. Attach dupont connectors to serial cable
+3. Test powering up and loging in to the Pi
 5. Configure Pixhawk
 3. Attach the Pixhawk to the Pi
 
 
 ### Step1: Add 5V usb supply
-Use the crimp too to attach the JST connector to open UBEC leads making sure to have the correct orientation for the 12V supply coming out ofthe base of the Iris
+Use the crimp tool to attach the JST connector to open UBEC input leads making sure to have the correct orientation for the 12V supply coming out ofthe base of the Iris
 (red to red and black to black)
 
-![Image of JST Connector](https://r4space.github.io/docs/images/JST.jpeg)
-![Image of UBEC](https://r4space.github.io/docs/images/UBEC.jpeg)
+![Image of JST Connector](https://r4space.github.io/docs/images/JST.jpeg| width=100)
+![Image of UBEC](https://r4space.github.io/docs/images/UBEC.jpeg| width=50)
 
 
 ### Step2: Add Dupont connector to serial cable
