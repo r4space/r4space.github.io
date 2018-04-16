@@ -8,3 +8,6 @@
     - NDSUAS
     - muizenberg
 
+## 3D models
+* [3D FreeCad model of Pi3 (I did not create this, do not credit me)](./3dfiles/Pi3Model.fcstd)
+* 
