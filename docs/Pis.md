@@ -8,6 +8,8 @@
     - NDSUAS
     - muizenberg
 
-## 3D models
-* [3D FreeCad model of Pi3 (I did not create this, do not credit me)](./3dfiles/Pi3Model.fcstd)
-* 
+## FreeCad models
+* [Model of Pi3](./3dfiles/Pi3Model.fcstd)
+(I did not create this, do not credit me)
+* [3DR Iris+ PiCaseShell Mount With all source stages](./3dfiles/PiCaseShell_AllSteps.fcstd)
+* [3DR Iris+ PiCaseShell Mount Simple](./3dfiles/PiCaseShell_simple.fcstd)
