@@ -7,7 +7,13 @@
 * Wifis setup: 
     - NDSUAS
     - muizenberg
-
+* cml copy to new 16GB SDcard formated to ext4 //If formated to FAT32 the image won't fit
+    ```bash
+    $ sudo umount /dev/sda
+    $ sudo dd bs=4M if=SDCard.img of=/dev/sda status=progress
+    $ sync
+    $ umount /dev/sda
+    ```
 ## FreeCad models
 * [Model of Pi3](./3dfiles/Pi3Model.fcstd)
 (I did not create this, do not credit me)

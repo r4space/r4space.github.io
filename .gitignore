@@ -1,3 +1,4 @@
+*.lock
 *.img
 *.swp
 _site/
