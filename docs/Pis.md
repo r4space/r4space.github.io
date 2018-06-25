@@ -9,7 +9,7 @@
     - muizenberg
 * cml copy to new 16GB SDcard formated to ext4 //If formated to FAT32 the image won't fit
     ```bash
-    $ sudo umount /dev/sda
+    $ sudo umount /dev/sda1
     $ sudo dd bs=4M if=SDCard.img of=/dev/sda status=progress
     $ sync
     $ umount /dev/sda
