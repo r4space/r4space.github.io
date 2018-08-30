@@ -1,7 +1,9 @@
 # Pis
+*images*
+- [Backup image for 16GB SDCard, Jessie](https://drive.google.com/drive/folders/1_equhzbgl44xIteVRlxmfu4HFsB2h06P?usp=sharing)
+- [ORiginal VTAg Pi3 32G](https://drive.google.com/open?id=10BCtub5M6uTrdXMH0G2ZmeeP4FjZgO05)
 
 ## Pi3
-- [Backup image for 16GB SDCard, Jessie](https://drive.google.com/drive/folders/1_equhzbgl44xIteVRlxmfu4HFsB2h06P?usp=sharing)
 * User: pi
 * Password: NotreDame
 * Wifis setup: 
@@ -27,6 +29,14 @@
 	$ unxz file.xz //-k if you want to keep the original
 
    ```
+** [Networking for field drone pi setup](./UbuntuMateNetworking.md )**
+
+
+
+##
+
+
+
 ## FreeCad models
 * [Model of Pi3](./3dfiles/Pi3Model.fcstd)
 (I did not create this, do not credit me)
